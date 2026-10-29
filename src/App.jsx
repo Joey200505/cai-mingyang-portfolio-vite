@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+
 const projects = [
   {
     index: '01',
     category: '数学建模国赛作品',
     title: '基于生存分析和机器学习的 NIPT 时点选择与女胎异常判定',
-    image: '/assets/project-nipt.png',
+    image: asset('assets/project-nipt.png'),
     tags: ['生存分析', 'LMM', 'RSF', '分类预测'],
     summary:
       '从重复测量数据的预处理出发，以混合效应模型、Kaplan–Meier 生存分析和随机生存森林寻找检测时点，并比较 LR、RF、SVM、MLP 的异常判定表现。',
@@ -18,7 +20,7 @@ const projects = [
     index: '02',
     category: '数学建模省赛 / 校赛作品',
     title: '基于多模型融合的吉林省教育事业预测与发展问题研究',
-    image: '/assets/project-education.png',
+    image: asset('assets/project-education.png'),
     tags: ['教育预测', 'GM(1,1)', '回归分析', '熵权法'],
     summary:
       '基于 2004–2023 年教育统计数据，预测三个教育阶段未来三年在校生规模，并以熵权法构建教育水平评分，形成经费投入与资源配置建议。',
@@ -129,10 +131,10 @@ function Hero() {
         muted
         loop
         playsInline
-        poster="/assets/hero-data-space.png"
+        poster={asset('assets/hero-data-space.png')}
         aria-hidden="true"
       >
-        <source src="/assets/hero-loop.mp4" type="video/mp4" />
+        <source src={asset('assets/hero-loop.mp4')} type="video/mp4" />
       </video>
       <div className="hero-shade" />
       <div className="hero-grid" />
@@ -211,7 +213,7 @@ function About() {
         <div className="about-grid">
           <div className="portrait-wrap reveal">
             <div className="portrait-frame">
-              <img src="/assets/resume-image-000.jpg" alt="蔡明洋个人照片" />
+              <img src={asset('assets/resume-image-000.jpg')} alt="蔡明洋个人照片" />
               <span className="portrait-index">CM / 01</span>
             </div>
             <div className="portrait-caption">
